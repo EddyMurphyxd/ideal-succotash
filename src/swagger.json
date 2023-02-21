@@ -1,0 +1,40 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "Ideal Succotash",
+    "version": "0.1.0"
+  },
+  "host": "localhost:80",
+  "schemes": [
+    "http"
+  ],
+  "paths": {
+    "/{fancyNumber}": {
+      "get": {
+        "summary": "Returns a fancy string.",
+        "description": "- If the `fancyNumber` is a multiple of 3 - return \"G\", \n - If the `fancyNumber` is a multiple of 5 - return \"N\", \n - If the `fancyNumber` is a multiple of both 3 and 5 - return \"GN\";\n - Otherwise return the provided `fancyNumber`.",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "fancyNumber",
+            "schema": {
+              "type": "integer"
+            },
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    }
+  }
+}
